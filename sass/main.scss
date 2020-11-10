@@ -13,6 +13,11 @@
 
 @include font("Goldman");
 
+.wrapper {
+  background-color: rgb(0, 0, 255);
+  background-color: rgba(0, 0, 255, 0.5);
+}
+
 body {
   font-family: "Goldman";
 
@@ -29,44 +34,31 @@ body {
     .header {
       display: flex;
       flex-direction: row;
-      flex-wrap: wrap;
       justify-content: space-around;
-      align-items: flex-start;
+      align-items: center;
 
       width: $fill-parent;
       min-width: $fill-parent;
       max-width: $fill-parent;
-      height: $header--height + 1000px;
+      height: $header--height;
 
-      &__box {
-        flex: 1 1 200px;
-
-        border: 1px solid;
-        border-radius: 5px;
-        width: $box--width;
-        height: $box--height;
-        margin: 20px;
-        position: relative;
-      }
       &__image {
+        flex: 1 1 200px;
+        margin: 20px;
         width: $image--width;
-        height: $image--width;
+        height: $image--height;
       }
       &__image--one {
-        @include position--middle;
       }
       &__image-two {
-        @include position--middle;
       }
       &__image--three {
-        @include position--middle;
       }
       &__image--four {
-        @include position--middle;
       }
     }
     .css-grid__boxes {
-      @include margin(null null 100px null);
+      @include margin(50px null 100px null);
       display: grid;
       grid-template-rows: repeat(2, 100px);
       grid-template-columns: repeat(4, (150px, 1fr));
