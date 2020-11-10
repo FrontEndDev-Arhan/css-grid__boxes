@@ -1,0 +1,50 @@
+{
+  "name": "vscode_flexbox",
+  "version": "1.0.0",
+  "description": "power of eslint with me",
+  "main": "flexbox.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrontEndDev-Arhan/flexbox.html.git"
+  },
+  "keywords": [
+    "['sass'",
+    "'eslint'",
+    "'prettier'",
+    "'vscode'",
+    "'flexbox'",
+    "'css",
+    "grid'",
+    "'git'",
+    "'github']"
+  ],
+  "author": "Successful Businessman",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/FrontEndDev-Arhan/flexbox.html/issues"
+  },
+  "homepage": "https://github.com/FrontEndDev-Arhan/flexbox.html#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.8.1",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-wesbos": "^1.0.1",
+    "eslint-plugin-html": "^6.1.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "prettier": "^2.1.1",
+    "sass-lint": "^1.13.1"
+  },
+  "dependencies": {
+    "bower": "^1.8.8"
+  }
+}

@@ -1,0 +1,136 @@
+// import vendors partials
+@import "partials/normalize";
+@import "partials/main";
+
+// import bourbon sass framework
+@import "../bower_components/bourbon/core/bourbon";
+// import breakpoint sass framework
+@import "../bower_components/breakpoint-sass/stylesheets/breakpoint";
+// import variables
+@import "partials/variables";
+// import mixins
+@import "partials/mixins";
+
+@include font("Goldman");
+
+body {
+  font-family: "Goldman";
+
+  .wrapper {
+    width: $content--width;
+    min-width: $min__content--width;
+    max-width: $max__content--width;
+    margin: $margin--middle;
+
+    @include breakpoint(print) {
+      background-color: #456789;
+    }
+
+    .header {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: flex-start;
+
+      width: $fill-parent;
+      min-width: $fill-parent;
+      max-width: $fill-parent;
+      height: $header--height + 1000px;
+
+      &__box {
+        flex: 1 1 200px;
+
+        border: 1px solid;
+        border-radius: 5px;
+        width: $box--width;
+        height: $box--height;
+        margin: 20px;
+        position: relative;
+      }
+      &__image {
+        width: $image--width;
+        height: $image--width;
+      }
+      &__image--one {
+        @include position--middle;
+      }
+      &__image-two {
+        @include position--middle;
+      }
+      &__image--three {
+        @include position--middle;
+      }
+      &__image--four {
+        @include position--middle;
+      }
+    }
+    .css-grid__boxes {
+      @include margin(null null 100px null);
+      display: grid;
+      grid-template-rows: repeat(2, 100px);
+      grid-template-columns: repeat(4, (150px, 1fr));
+      grid-template-areas:
+        "image1 image2 image2 ."
+        "image1 . image3 image4"
+        "image5 image6 image6 image7"
+        "image8 image9 image9 ."
+        "image10 . image11 image12"
+        "image13 image14 image14 image14";
+      gap: 15px;
+      grid-auto-flow: row;
+      grid-auto-rows: 100px 150px 200px 250px 50px;
+
+      &__image {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        height: 100%;
+        min-height: 100%;
+        max-height: 100%;
+      }
+      &__image--one {
+        grid-area: image1;
+      }
+      &__image--two {
+        grid-area: image2;
+      }
+      &__image--three {
+        grid-area: image3;
+      }
+      &__image--four {
+        grid-area: image4;
+      }
+      &__image--five {
+        grid-area: image5;
+      }
+      &__image--six {
+        grid-area: image6;
+      }
+      &__image--seven {
+        grid-area: image7;
+      }
+      &__image--eight {
+        grid-area: image8;
+      }
+      &__image--nine {
+        grid-area: image9;
+      }
+      &__image--ten {
+        grid-area: image10;
+      }
+      &__image--eleven {
+        grid-area: image11;
+      }
+      &__image--twelve {
+        grid-area: image12;
+      }
+      &__image--thirteen {
+        grid-area: image13;
+      }
+      &__image--fourteen {
+        grid-area: image14;
+      }
+    }
+  }
+}
