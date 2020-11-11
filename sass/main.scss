@@ -20,6 +20,7 @@
 
 body {
   font-family: "Goldman";
+  scroll-behavior: smooth;
 
   .wrapper {
     width: $content--width;
@@ -31,22 +32,30 @@ body {
       background-color: #456789;
     }
 
+    .flexbox__gallery-title {
+      text-align: center;
+      @include padding(50px null null null);
+
+      font-variant-caps: all-petite-caps;
+    }
     .header {
       display: flex;
       flex-direction: row;
+      flex-wrap: wrap;
       justify-content: space-around;
-      align-items: center;
+      align-items: flex-start;
 
-      width: $fill-parent;
-      min-width: $fill-parent;
-      max-width: $fill-parent;
       height: $header--height;
 
       &__image {
-        flex: 1 1 200px;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 100px;
         margin: 20px;
-        width: $image--width;
-        height: $image--height;
+        min-width: $min__image--width;
+        max-width: $max__image--width;
+        min-height: $min__image--height;
+        max-height: $max__image--height;
       }
       &__image--one {
       }
@@ -57,8 +66,33 @@ body {
       &__image--four {
       }
     }
-    .css-grid__boxes {
-      @include margin(50px null 100px null);
+    .css-grid__gallery-title {
+      text-align: center;
+
+      font-variant-caps: all-petite-caps;
+
+      @include breakpoint(max-width 320px) {
+        margin-top: 62%;
+      }
+
+      // @include breakpoint(500px 699px) {
+      //   margin-top: 42%;
+      // }
+
+      @media screen and (min-width: 500px) and (max-width: 699px) {
+        margin-top: 42%;
+      }
+
+      // @include breakpoint(320px 500px) {
+      //   margin-top: ;
+      // }
+
+      @media screen and (min-width: 320px) and (max-width: 500px) {
+        margin-top: 60%;
+      }
+    }
+    .css-grid__boxes--rows {
+      @include margin(30px 20px null 20px);
       display: grid;
       grid-template-rows: repeat(2, 100px);
       grid-template-columns: repeat(4, (150px, 1fr));
@@ -70,7 +104,7 @@ body {
         "image10 . image11 image12"
         "image13 image14 image14 image14";
       gap: 15px;
-      grid-auto-flow: row;
+      grid-auto-flow: row dense;
       grid-auto-rows: 100px 150px 200px 250px 50px;
 
       &__image {
@@ -122,6 +156,85 @@ body {
       }
       &__image--fourteen {
         grid-area: image14;
+      }
+    }
+    .css-grid__gallery--implicit-columns--title {
+      text-align: center;
+      @include margin(80px null null null);
+
+      font-variant-caps: all-petite-caps;
+    }
+    .css-grid__boxes--columns {
+      position: relative;
+      @include margin(30px 20px null 20px);
+      padding-bottom: 20px;
+      display: grid;
+      grid-template-rows: repeat(6, 100px);
+      grid-template-columns: repeat(2, minmax(120px, 1fr));
+      grid-template-areas:
+        "image1 image7"
+        "image2 image8"
+        "image3 image9"
+        "image4 image10"
+        "image5 image11"
+        "image6 image12";
+      gap: 15px;
+      grid-auto-flow: column dense;
+      grid-auto-columns: 100px 150px 200px 250px 50px;
+      overflow: scroll;
+
+      &__image {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        height: 100%;
+        min-height: 100%;
+        max-height: 100%;
+      }
+      &__image--one {
+        grid-area: image1;
+      }
+      &__image--two {
+        grid-area: image2;
+      }
+      &__image--three {
+        grid-area: image3;
+      }
+      &__image--four {
+        grid-area: image4;
+      }
+      &__image--five {
+        grid-area: image5;
+      }
+      &__image--six {
+        grid-area: image6;
+      }
+      &__image--seven {
+        grid-area: image7;
+      }
+      &__image--eight {
+        grid-area: image8;
+      }
+      &__image--nine {
+        grid-area: image9;
+      }
+      &__image--ten {
+        grid-area: image10;
+      }
+      &__image--eleven {
+        grid-area: image11;
+      }
+      &__image--twelve {
+        grid-area: image12;
+      }
+      .lead {
+        position: absolute;
+        right: 0%;
+        bottom: 2%;
+
+        @include breakpoint(1px 710px) {
+          display: none;
+        }
       }
     }
   }

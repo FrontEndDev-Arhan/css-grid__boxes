@@ -18,16 +18,20 @@ $min__content--width: 320px;
 $max__content--width: 1200px;
 $content-height: 2000px;
 $max-content-height: 3000px;
-$header--height: 300px;
+$header--height: 200px;
 $footer--height: 400px;
 $base--size: 16px;
 $image--width: 200px;
 $image--height: 200px;
-$min__image--width: 200px;
-$max__image--width: 200px;
+$min__image--width: 100px;
+$max__image--width: 150px;
+$min__image--height: 100px;
+$max__image--height: 150px;
 $fill-parent: 100%;
 $box--width: 260px;
-$box--height: 260px;
+$box--height: 260px
+
+$bp: 
 
 // === miscelleneous ===
 $header--background: #abd;
