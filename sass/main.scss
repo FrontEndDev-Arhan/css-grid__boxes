@@ -21,6 +21,15 @@
   color: #fff;
 }
 
+%image--dimensions {
+  width: $fill-parent;
+  min-width: $fill-parent;
+  max-width: $fill-parent;
+  height: $fill-parent;
+  min-height: $fill-parent;
+  max-height: $fill-parent;
+}
+
 body {
   font-family: "Goldman";
   scroll-behavior: smooth;
@@ -42,7 +51,7 @@ body {
       font-variant-caps: all-petite-caps;
     }
     .flexbox__gallery-title {
-      @extend title;
+      @extend %title;
       @include padding(50px null null null);
     }
     .header {
@@ -74,7 +83,7 @@ body {
       }
     }
     .css-grid__gallery-title {
-      @extend title;
+      @extend %title;
 
       @include breakpoint(max-width 320px) {
         margin-top: 62%;
@@ -100,7 +109,7 @@ body {
       @include margin(30px 20px null 20px);
       display: grid;
       grid-template-rows: repeat(2, 100px);
-      grid-template-columns: repeat(4, (150px, 1fr));
+      grid-template-columns: repeat(4, minmax(100px, 1fr));
 
       grid-template-areas:
         "image1 image2 image2 ."
@@ -109,17 +118,33 @@ body {
         "image8 image9 image9 ."
         "image10 . image11 image12"
         "image13 image14 image14 image14";
-      grid-gap: 20px;
+      gap: 30px 15px;
       grid-auto-flow: row dense;
       grid-auto-rows: 100px 150px 200px 250px 50px;
-      %image--dimensions {
-        width: 100%;
-        min-width: 100%;
-        max-width: 100%;
-        height: 100%;
-        min-height: 100%;
-        max-height: 100%;
+
+      @include breakpoint(max-width 610px) {
+        grid-template-columns: repeat(3, minmax(100px, 1fr));
+        grid-template-areas:
+          "image1 image2 image2"
+          "image1  image3 image4"
+          "image5 image6 image7"
+          "image8 image9 image9"
+          "image10 image11 image12"
+          "image13 image14 image14";
       }
+
+      @include breakpoint(max-width 480px) {
+        grid-template-columns: repeat(2, minmax(100px, 1fr));
+        grid-template-areas:
+          "image1 image2"
+          "image3 image4"
+          "image5 image6"
+          "image7 image8"
+          "image9 image10"
+          "image11 image12"
+          "image13 image14";
+      }
+
       &__image {
         @extend %image--dimensions;
       }
@@ -167,7 +192,7 @@ body {
       }
     }
     .css-grid__gallery--implicit-columns--title {
-      @extend title;
+      @extend %title;
 
       @include margin(80px null null null);
     }
@@ -185,9 +210,16 @@ body {
         "image4 image10"
         "image5 image11"
         "image6 image12";
-      gap: 20px;
+      gap: 15px 30px;
       grid-auto-flow: column dense;
       grid-auto-columns: minmax(60px, 2fr) minmax(60px, 1fr) 200px 250px 50px;
+
+      @include breakpoint(1px 470px) {
+        grid-template-columns: repeat(2, minmax(100px, 1fr));
+        grid-auto-flow: row;
+        grid-auto-rows: 150px;
+      }
+
       &__image {
         @extend %image--dimensions;
       }
