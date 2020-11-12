@@ -592,6 +592,7 @@ body .wrapper .flexbox__gallery-title, body .wrapper .css-grid__gallery-title, b
 body {
   font-family: "Goldman";
   scroll-behavior: smooth;
+  padding: 20px;
 }
 
 body .wrapper {
