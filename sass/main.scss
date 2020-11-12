@@ -36,12 +36,14 @@ body {
     @include breakpoint(print) {
       background-color: #456789;
     }
-
-    .flexbox__gallery-title {
+    %title {
       text-align: center;
-      @include padding(50px null null null);
 
       font-variant-caps: all-petite-caps;
+    }
+    .flexbox__gallery-title {
+      @extend title;
+      @include padding(50px null null null);
     }
     .header {
       display: flex;
@@ -72,9 +74,7 @@ body {
       }
     }
     .css-grid__gallery-title {
-      text-align: center;
-
-      font-variant-caps: all-petite-caps;
+      @extend title;
 
       @include breakpoint(max-width 320px) {
         margin-top: 62%;
@@ -109,17 +109,19 @@ body {
         "image8 image9 image9 ."
         "image10 . image11 image12"
         "image13 image14 image14 image14";
-      gap: 20px;
+      grid-gap: 20px;
       grid-auto-flow: row dense;
       grid-auto-rows: 100px 150px 200px 250px 50px;
-
-      &__image {
+      %image--dimensions {
         width: 100%;
         min-width: 100%;
         max-width: 100%;
         height: 100%;
         min-height: 100%;
         max-height: 100%;
+      }
+      &__image {
+        @extend %image--dimensions;
       }
       &__image--one {
         grid-area: image1;
@@ -165,10 +167,9 @@ body {
       }
     }
     .css-grid__gallery--implicit-columns--title {
-      text-align: center;
-      @include margin(80px null null null);
+      @extend title;
 
-      font-variant-caps: all-petite-caps;
+      @include margin(80px null null null);
     }
     .css-grid__boxes--columns {
       position: relative;
@@ -188,12 +189,7 @@ body {
       grid-auto-flow: column dense;
       grid-auto-columns: minmax(60px, 2fr) minmax(60px, 1fr) 200px 250px 50px;
       &__image {
-        width: 100%;
-        min-width: 100%;
-        max-width: 100%;
-        height: 100%;
-        min-height: 100%;
-        max-height: 100%;
+        @extend %image--dimensions;
       }
       &__image--one {
         grid-area: image1;
