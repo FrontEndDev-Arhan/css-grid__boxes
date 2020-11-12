@@ -568,13 +568,14 @@ textarea {
   }
 }
 
+/** @format */
 body .wrapper {
   background-color: #8080ff;
   background-color: rgba(0, 0, 64, 0.75);
   color: #fff;
 }
 
-body .wrapper .css-grid__boxes--rows__image, body .wrapper .css-grid__boxes--columns__image {
+body .wrapper .css-grid__boxes--rows__image, body .wrapper .css-grid__boxes--columns__image, body .fill-fit__container .auto-fill__boxes__image, body .fill-fit__container .auto-fit__boxes__image {
   width: 100%;
   min-width: 100%;
   max-width: 100%;
@@ -583,13 +584,18 @@ body .wrapper .css-grid__boxes--rows__image, body .wrapper .css-grid__boxes--col
   max-height: 100%;
 }
 
+body .wrapper .flexbox__gallery-title, body .wrapper .css-grid__gallery-title, body .wrapper .css-grid__gallery--implicit-columns--title, body .fill-fit__container .auto-fill__boxes-title, body .fill-fit__container .auto-fit__boxes-title {
+  text-align: center;
+  font-variant-caps: all-petite-caps;
+}
+
 body {
   font-family: "Goldman";
   scroll-behavior: smooth;
 }
 
 body .wrapper {
-  width: 80%;
+  width: 90%;
   min-width: 320px;
   max-width: 1200px;
   margin: 0 auto;
@@ -599,11 +605,6 @@ body .wrapper {
   body .wrapper {
     background-color: #456789;
   }
-}
-
-body .wrapper .flexbox__gallery-title, body .wrapper .css-grid__gallery-title, body .wrapper .css-grid__gallery--implicit-columns--title {
-  text-align: center;
-  font-variant-caps: all-petite-caps;
 }
 
 body .wrapper .flexbox__gallery-title {
@@ -816,5 +817,44 @@ body .wrapper .css-grid__boxes--columns .lead {
   body .wrapper .css-grid__boxes--columns .lead {
     display: none;
   }
+}
+
+body .fill-fit__container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+body .fill-fit__container .auto-fill__boxes-title {
+  margin-top: 40px;
+}
+
+body .fill-fit__container .auto-fill__boxes {
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 95%;
+  display: grid;
+  grid-template-rows: repeat(1, 150px);
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-auto-flow: row;
+  grid-auto-rows: 100px 200px 250px 150px 200px 250px;
+  gap: 40px 30px;
+}
+
+body .fill-fit__container .auto-fit__boxes-title {
+  margin-top: 40px;
+}
+
+body .fill-fit__container .auto-fit__boxes {
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 95%;
+  display: grid;
+  grid-template-rows: repeat(1, 150px);
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-auto-flow: row;
+  grid-auto-rows: 100px 200px 250px 150px 200px 250px;
+  gap: 40px 30px;
 }
 /*# sourceMappingURL=main.css.map */

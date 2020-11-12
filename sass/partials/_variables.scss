@@ -1,3 +1,5 @@
+/** @format */
+
 // variables
 
 // === colors ===
@@ -13,7 +15,7 @@ $text__font: arial, helvetica, sans-serif;
 $headline__font: monospace;
 
 // === sizes ===
-$content--width: 80%;
+$content--width: 90%;
 $min__content--width: 320px;
 $max__content--width: 1200px;
 $content-height: 2000px;
@@ -30,10 +32,11 @@ $max__image--height: 150px;
 $fill-parent: 100%;
 $box--width: 260px;
 $box--height: 260px;
+$fill-fit__width: 1000px;
 
 // === miscelleneous ===
 $header--background: #333;
 $heading--width: 100%;
 $margin--middle: 0 auto;
-$according-to-content: min-content;
+$at-least-content: min-content;
 $as-much-content: max-content;
