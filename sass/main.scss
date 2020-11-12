@@ -15,9 +15,10 @@
 
 @include font("Goldman");
 
-.wrapper {
-  background-color: rgb(0, 0, 255);
-  background-color: rgba(0, 0, 255, 0.5);
+%wrapper {
+  background-color: tint(rgb(0, 0, 255), 50%);
+  background-color: shade(rgba(0, 0, 255, 0.5), 50%);
+  color: #fff;
 }
 
 body {
@@ -29,6 +30,8 @@ body {
     min-width: $min__content--width;
     max-width: $max__content--width;
     margin: $margin--middle;
+
+    @extend %wrapper;
 
     @include breakpoint(print) {
       background-color: #456789;
@@ -80,7 +83,7 @@ body {
       // @include breakpoint(500px 699px) {
       //   margin-top: 42%;
       // }
-        
+
       @media screen and (min-width: 500px) and (max-width: 699px) {
         margin-top: 42%;
       }

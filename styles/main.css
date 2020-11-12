@@ -568,9 +568,10 @@ textarea {
   }
 }
 
-.wrapper {
-  background-color: blue;
-  background-color: rgba(0, 0, 255, 0.5);
+body .wrapper {
+  background-color: #8080ff;
+  background-color: rgba(0, 0, 64, 0.75);
+  color: #fff;
 }
 
 body {
